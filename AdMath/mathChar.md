@@ -66,3 +66,10 @@ Markdown Preview Enhanced: Toggle Scroll Sync 滑动同步
 
 $\max \limits_{1<x<100}f(x)$
 $\lim\limits_{t \to \infty }{x(t)}$
+
+
+NULL | #开头的大标题 | -或者1开头的小标题
+-----|---------|-----------
+tab键缩进 | 作为纯文本 | 缩进并作为子项
+顶格 | 不缩进 | 不缩进
+加小标题 | 缩进 | NULL
