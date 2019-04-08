@@ -18,6 +18,7 @@
 |$\sigma$|\sigma|
 |$\varphi$|\varphi|
 |$\omega$|\omega|
+|$\varepsilon$|\varepsilon|
 
 
 
@@ -28,6 +29,18 @@
 |$\int$|\int|积分|
 |$\Delta$|\Delta|求差|
 |$\delta$|\delta|^|
+
+集合运算符
+|数学符号|转义字符|意义|
+|---|---|---|
+|$\in$|\in|属于|
+|$\subset$|\subset|真子集|
+|$\supset$|\supset|真包涵|
+|$\subseteq$|\subseteq|子集|
+|$\supseteq$|\supseteq|包涵|
+|$\cap$|\cap|并|
+|$\cup$|\cup|交|
+
 
 :smile:
 :broken_heart:
@@ -45,3 +58,11 @@
 
 [gnuplot的特殊符号](http://blog.sciencenet.cn/blog-373392-499627.html)
 [gnuplot的pdf](file:///home/mark/DF/gnuplot_tutorial.pdf)
+
+editor.tabCompletion用来是否用tab键显示代码片段
+markdown.preview.scrollPreviewWithEditor 跟随滚动
+markdown.preview.scrollEditorWithPreview 
+Markdown Preview Enhanced: Toggle Scroll Sync 滑动同步
+
+$\max \limits_{1<x<100}f(x)$
+$\lim\limits_{t \to \infty }{x(t)}$
