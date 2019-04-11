@@ -42,6 +42,24 @@
 |$\cup$|\cup|交|
 
 
+空格的使用
+描述 | 表达式 | 效果 | 宽度
+------- | ------- | ------- | -------
+两个quad空格 | a \qquad b | $a \qquad b$ | 两个m的宽度
+quad空格 | a \quad b | $a \quad b$ | 一个m的宽度
+大空格 | a\\ b | $a\ b$ | 1/3m宽度
+中等空格 | a\\;b | $a\;b$ | 2/7m宽度
+小空格 | a\\,b | $a\,b$ | 1/6m宽度
+没有空格 | ab | $ab\,$ | 没有
+紧贴 | a\\!b | $a\!b$ | 缩进1/6m宽度
+
+NULL | #开头的大标题 | -或者1开头的小标题
+-----|---------|-----------
+tab键缩进 | 作为纯文本 | 缩进并作为子项
+顶格 | 不缩进 | 不缩进
+加小标题 | 缩进 | NULL
+
+
 :smile:
 :broken_heart:
 :grimacing:
@@ -67,12 +85,8 @@ Markdown Preview Enhanced: Toggle Scroll Sync 滑动同步
 $\max \limits_{1<x<100}f(x)$
 $\lim\limits_{t \to \infty }{x(t)}$
 
+可以使用big, Big, bigg, Bigg控制括号的大小
 
-NULL | #开头的大标题 | -或者1开头的小标题
------|---------|-----------
-tab键缩进 | 作为纯文本 | 缩进并作为子项
-顶格 | 不缩进 | 不缩进
-加小标题 | 缩进 | NULL
 
 
 
