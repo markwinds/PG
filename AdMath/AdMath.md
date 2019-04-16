@@ -1,3 +1,15 @@
+---
+html:
+    embed_local_images: true
+    embed_svg: true
+    offline: true
+    toc: true
+
+export_on_save:
+    html: true
+---
+
+
 [TOC]
 
 # 高等数学
@@ -354,23 +366,23 @@ $u(x)^{v(x)}$通常将其转化为复合函数$e^{v(x)ln\,u(x)}$
     $$F'(x)=\frac{d}{dx}\bigg[ \int_{\varphi _1}^{\varphi _2} f(t)dt\bigg] = f[\varphi _2(x)]\varphi _2'(x) - f[\varphi _1(x)]\varphi _1'(x)$$
 
 - 基本初等函数的导数公式
-    原函数 | 导函数
-    ----|----
-    $x^a$ | $ax^{a-1}$
-    $a^x$ | $a^xlna$
-    $log_ax$ | $\frac{1}{xlna}$
-    $sinx$ | $cosx$
-    $cosx$ | $-sinx$
-    $arcsinx$ | $\frac{1}{\sqrt{1-x^2}}$
-    $arccos$ | $-\frac{1}{\sqrt{1-x^2}}$
-    $tanx$ | $sec^2x$
-    $cotx$ | $-csc^2x$
-    $arctanx$ | $\frac{1}{1+x^2}$
-    $arccotx$ | $-\frac{1}{1+x^2}$
-    $secx$ | $secx\,tanx$
-    $cscx$ | $-cscx\,cotx$
-    $ln(x+\sqrt{x^2+1})$ | $\frac{1}{\sqrt{x^2+1}}$
-    $ln(x+\sqrt{x^2-1})$ | $\frac{1}{\sqrt{x^2-1}}$
+原函数               | 导函数
+---------------------|--------------------------
+$x^a$                | $ax^{a-1}$
+$a^x$                | $a^xlna$
+$log_ax$             | $\frac{1}{xlna}$
+$sinx$               | $cosx$
+$cosx$               | $-sinx$
+$arcsinx$            | $\frac{1}{\sqrt{1-x^2}}$
+$arccos$             | $-\frac{1}{\sqrt{1-x^2}}$
+$tanx$               | $sec^2x$
+$cotx$               | $-csc^2x$
+$arctanx$            | $\frac{1}{1+x^2}$
+$arccotx$            | $-\frac{1}{1+x^2}$
+$secx$               | $secx\,tanx$
+$cscx$               | $-cscx\,cotx$
+$ln(x+\sqrt{x^2+1})$ | $\frac{1}{\sqrt{x^2+1}}$
+$ln(x+\sqrt{x^2-1})$ | $\frac{1}{\sqrt{x^2-1}}$
 
 
 
@@ -509,12 +521,79 @@ $u(x)^{v(x)}$通常将其转化为复合函数$e^{v(x)ln\,u(x)}$
         $$\Big| \int^b_af(x)g(x)dx \Big|\leq \Big[ {\int_a^b|f(x)|^pdx} \Big]^{\frac{1}{p}} \cdot \Big[ {\int_a^b|g(x)|^qdx} \Big]^{\frac{1}{q}}$$
         其中$p>1,\frac{1}{p}+\frac{1}{q}=1$
     7. 其他重要不等式
-    
+        @import "./pic/常用的不等式.png"
+        7. 若$\lim\limits_{n \to \infty }{u_n}=0$,则${u_n}$有界，即存在M>0,使得$|u_n| \leq M$
+        8. 闭区间上的连续函数必有界
+        9. 闭区间上的连续函数必有最大值和最小值
+        10. f(x)在[a,b]上单调增加且可导，则$f'(x)\geq 0,f(a)\leq f(x) \leq f(b)$
+        11. f(x)在[a,b]上图像是凹的，且二阶可导，则$f''(x)\geq0$
+        12. $f(x)\leq g(x),x\in [a,b]$则$\int_a^bf(x)dx\leq \int_a^bg(x)dx$
+        13. $\sum\limits_{n=0}^{\infty}{u_n}$收敛，则$\lim\limits_{n \to \infty }{u_n}=0$
 
 ### 题目讲解
 书前面知识点的证明要去看
 
 
+## 第七讲：一元函数积分学的概念与计算
+
+### 知识点讲解
+
+#### 不定积分、定积分、变限积分与反常积分的概念
+
+##### 不定积分的概念与存在性
+- 原函数与不定积分
+    设函数 f(x)定义在某区间$I$上, 若存在可导函数 F(x) ,对于该区间上任意一点都有$F^{\prime}(x)=f(x)$成立,则称F(x))是f(x)在区间$I$上的一个原函数. 称$\int f(x) \mathrm{d} x=F(x)+C$为f(x)在区间$I$上的不定积分，其中 C 为任意常数.
+    >谈到函数f(x)的原函数与不定积分,必须指明f(x)所定义的区间
+- 原函数(不定积分)存在定理
+    1. 连续函数f(x)必有原函数F(x)
+    2. 含有第一类间断点、无穷间断点的函数f(z)在包含该间断点的区间内必没有原函数F(x)
+
+##### 定积分的概念、存在与性质
+- 定积分的概念
+    若函数f(x)在区间[a,b]上有定义,在[a,b]上任取n一1个分点$x_{k}(k=1,2,3, \cdots, n-1)$,定义$x_0=a,x_n=b$且$a=x_{0}<x_{1}<x_{2}<x_{3}<\cdots<x_{n-1}<x_{n}=b$记$\Delta x_{k}=x_{k}-x_{k-1}, k=1,2,3, \cdots, n$并任取$\xi_{k} \in\left[x_{k-1}, x_{k}\right]$，记$$\lambda=\max _{1 \leq k \leq n}\left\{\Delta x_{k}\right\}$$当$\lambda \rightarrow 0$时,极限$$ \lim _{\lambda \rightarrow 0} \sum_{k=1}^{n} f\left(\xi_{k}\right) \Delta x_{k}$$存在且与分点$x_k,\xi_k$的取法无关,则称函数f(x)在区间[a,b]上可积,即 $$ \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\lambda \rightarrow 0} \sum_{k=1}^{n} f\left(\xi_{k}\right) \Delta x_{k}$$
+    精确定义式
+    $$ 
+    \int_{a}^{b} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(a+\frac{b-a}{n} i\right) \frac{b-a}{n}
+    $$
+- 定积分存在定理
+    定积分的存在性，也称之为一元函数（常义）的可积性。这里的常义指的是区间有限函数有界，与后面讲的区间无穷函数无界的反常积分有所区别，本讲中的可积性都是常义的可积性。
+    - 定积分存在的充分条件
+        1. 函数f(x)在区间(a,b)上连续，则$\int_{a}^{b} f(x) \mathrm{d} x$存在
+        2. 函数f(x)在区间(a,b)上有界，且只有有限个间断点，则$\int_{a}^{b} f(x) \mathrm{d} x$存在
+    - 定积分存在的必要条件
+        可积函数必有界,即若$\int_{a}^{b} f(x) \mathrm{d} x$存在,则f(x)在[a,b]上必有界.
+- 定积分的性质(以下假设所写积分均存在)
+    - 性质1(求区间长度) 假设$a<b$,则$\int_{a}^{b} \mathrm{d} x=b-a=L$,其中$L$为区间[a,b]的长度
+    - 性质2(积分的线性性质) 设$k_1,k_2$为常数,则$\int_{a}^{b}\left[k_{1} f(x) \pm k_{2} g(x)\right] \mathrm{d} x=k_{1} \int_{a}^{b} f(x) \mathrm{d} x \pm k_{2} \int_{a}^{b} g(x) \mathrm{d} x$
+    - 性质3(积分的可加(拆)性) 无论a,b,c 的大小如何,总有$\int_{a}^{b} f(x) \mathrm{d} x=\int_{a}^{c} f(x) \mathrm{d} x+\int_{c}^{b} f(x) \mathrm{d} x$
+    - 性质4(积分的保号性) 若在区间[a,b]上有$f(x)\leq g(x)$则有$\int_{a}^{b} f(x) \mathrm{d} x \leqslant \int_{a}^{b} g(x) \mathrm{d} x$特殊的有$\left|\int_{a}^{b} f(x) \mathrm{d} x\right| \leqslant \int_{a}^{b}|f(x)| \mathrm{d} x$
+    - 性质5(估值定理) 设M,m分别是f(x)在[a,b]上的最大值和最小值，$L$为区间[a,b]的长度，则有$m L \leqslant \int_{0}^{b} f(x) \mathrm{d} x \leqslant M L$
+    - 性质6(中值定理) 设f(x)在[a,b]上连续，则在[a,b]上至少存在一点$\xi$,使得$\int_{a}^{b} f(x) d x=f(\xi)(b-a)$
+
+##### 变限积分及其求导公式
+- 变限积分
+    当x在[a,b]上变动时，对应于每个x值，积分$\int_{a}^{x} f(t) \mathrm{d} t$就有一个确定的值，因此$\int_{a}^{x} f(t) \mathrm{d} t$就是一个变上限的函数，记作$\Phi(x)=\int_{a}^{x} f(t) d t(a \leqslant x \leqslant b)$，则称$\Phi(x)$为变上限的定积分。同理可定义变下限的积分和上下限都变化的积分，这些都称为变限积分。
+- 变限积分的性质
+    - f(x)在[a,b]上可积，则函数$F(x)=\int_{a}^{x} f(t) d t$在[a,b]上连续
+    - f(x)在[a,b]上连续，则函数$F(x)=\int_{a}^{x} f(t) d t$在[a,b]上可导
+- 变限积分的求导公式
+    设$F(x)=\int_{\varphi_{1}(x)}^{\varphi_{2}(x)} f(t) \mathrm{d} t$，其中f(x)在[a,b]上连续，可导函数$\varphi_{1}(x)，\varphi_{2}(x)$的值域在[a,b]上，则在$\varphi_{1}(x)，\varphi_{2}(x)$的公共定义域上，有
+    $$
+    F^{\prime}(x)=
+    \frac{d}{d x}\left[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)} f(t) d t\right]=
+    f\left[\varphi_{2}(x)\right] \varphi_{2}^{\prime}(x)-f\left[\varphi_{1}(x)\right] \varphi_{1}^{\prime}(x)
+    $$
+    >我们称上面公式中的x为求导变量,t为积分变量。求导变量x只出现在积分的上、下限时才能使用变限积分求导公式,若x出现在被积函数中,必须通过恒等变形(比如变量代换等)，将其移出被积函数,才能使用变限积分求导公式
+
+## 第二讲：极限与连续
+
+### 知识点讲解
+## 第二讲：极限与连续
+
+### 知识点讲解
+## 第二讲：极限与连续
+
+### 知识点讲解
 ## 第二讲：极限与连续
 
 ### 知识点讲解
